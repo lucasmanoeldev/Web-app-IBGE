@@ -8,7 +8,7 @@ Este projeto consiste em uma aplicação web interativa desenvolvida com Streaml
 - **Visualização de Dados:** A aplicação exibe a frequência do nome por década em formato de tabela e um gráfico de linha que mostra a evolução da popularidade do nome ao longo do tempo.
 - **Integração com a API do IBGE:** Os dados são obtidos diretamente da API pública do IBGE, garantindo informações atualizadas e oficiais.
 
-## Estrutura do Código (`aula.py`):
+## Estrutura do Código (`web_app_ibge.py`):
 
 - `pegar_nome_por_decadas(nome)`: Função responsável por construir a URL da API do IBGE, fazer a requisição e processar a resposta, retornando um dicionário com a frequência do nome por década.
 - `get_url(url, params=None)`: Função auxiliar para realizar requisições HTTP GET e tratar possíveis erros.
@@ -25,7 +25,18 @@ Para executar este projeto, você precisará ter Python instalado, juntamente co
    ```
 3. Execute a aplicação Streamlit:
    ```bash
-   streamlit run aula.py
+   streamlit run web_app_ibge.py
    ```
 
 Após a execução, a aplicação será aberta em seu navegador padrão.
+
+## Instalação com uv
+
+```bash
+git clone https://github.com/lucasmanoeldev/Web-app-IBGE.git
+cd Web-app-IBGE
+uv sync
+uv run streamlit run web_app_ibge.py
+```
+
+Requer Python 3.13+ conforme `pyproject.toml`. O arquivo `web_app_ibge.py` contém a interface e a consulta HTTP. `uv.lock` registra as dependências resolvidas. O projeto consulta uma API externa e precisa de conexão com a internet.

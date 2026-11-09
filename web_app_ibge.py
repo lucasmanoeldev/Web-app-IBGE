@@ -1,8 +1,4 @@
-from operator import index
-import re
-from altair import Order
 import requests
-from pprint import pprint
 import streamlit as st
 import pandas as pd
 
@@ -40,7 +36,7 @@ def get_url(url, params=None):
 
 def main():
     st.title("Web App Nomes")
-    st.write("Dados do IBG (font: https://servicodados.ibge.gov.br/api/docs/nomes?versao=2)")
+    st.write("Dados do IBGE (fonte: https://servicodados.ibge.gov.br/api/docs/nomes?versao=2)")
 
     nome = st.text_input("Consulte um nome:")
     if not nome:
